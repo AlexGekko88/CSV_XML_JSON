@@ -67,7 +67,6 @@ public class Basket {
         subSaveTxt(convertPrices(prices), textFile, writer);
         subSaveTxt(convertBin(bin), textFile, writer);
         writer.close();
-
     }
 
     public <T> void subSaveTxt(T[] arr, File textFile, PrintWriter writer) throws FileNotFoundException { //доп.дженерик-метод, чтобы избежать копирования в методе saveTxt
@@ -77,10 +76,9 @@ public class Basket {
             writer.append("*");
         }
         writer.append("\n");
-
     }
 
-    static Basket loadFromTxtFile(File textFile) { // метод загрузки корзины из текстового файла
+    public static Basket loadFromTxtFile(File textFile) { // метод загрузки корзины из текстового файла
 
         String[] arrOfLines = new String[QTY_OF_LINES];
 
@@ -129,7 +127,7 @@ public class Basket {
         return result;
     }
 
-    static Basket loadFromJson(File textFile) {
+    public static Basket loadFromJson(File textFile) {
         JSONParser parser = new JSONParser();
         JSONArray productsJSON = new JSONArray();
         JSONArray pricesJSON = new JSONArray();
@@ -181,7 +179,5 @@ public class Basket {
         }
         return binInteger;
     }
-
-
 }
 

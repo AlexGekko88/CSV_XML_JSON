@@ -68,7 +68,5 @@ public class Main {
         }
         scan.close();
         myLog.exportAsCSV(new File("log.csv"));
-
-
     }
 }
